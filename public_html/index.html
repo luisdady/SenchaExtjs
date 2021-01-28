@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href ="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/classic/theme-classic/resources/theme-classic-all.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/extjs/6.0.0/ext-all.js"></script>
+   <script src="lib/extjs/adapter/ext/ext-base.js"></script>
+        <script src="lib/extjs/ext-all-debug.js"></script>
+        
+         <script type="text/javascript">
+	   //Ext.onReady(function(){
+           Ext.onReady(function(){
+	   Ext.create('Ext.Panel',{
+	   renderTo:'hellowordPanel1',
+	   height:400,
+	   width:800,
+	   title:'Programando con Sencha',
+	   html:'Primer programa Luis'
+	   });
+	      //<!------------------------------------------------------------------------------------------>
+	   
+	   //<!--Este es el codigo para ingresar un formulario-->
+	       var formulario = new Ext.form.FormPanel({
+                //<!-- formulario nombre de la variable, Ext.FormPanel funcion que indica que queremos un formulario -->
+                standardSubmit: true,
+                renderTo: document.body,//<!-- donde pondremos el formulario -->
+                //<!-- si tuviesemos un div donde quisieramos poner el formulario seria(mirar ultima linea)  -->
+                frame: true,//<!-- lo queremos como ventana -->
+                title: 'Ingreso de Ciudades',//<!-- titulo de la ventana -->
+                width: 250,//<!-- ancho del formulario -->
+                heigth: 250,//<!-- ancho del formulario -->
+                x: 100,//<!-- 'x' y 'y', una posicion en la ventana -->
+                y: 100,
+                floating: true,//<!-- decir que puede tomar cualquier posicion en la ventana -->
+                items: [{//<!-- items hace referencia a los campos del formulario es un vector -->
+                            xtype: 'textfield',//<!--xtype tipo del campo -->
+                            fieldLabel: 'Nombre Ciudad',//<!--fieldLabel texto del campo -->
+                            name: 'nombre'//<!--name nombre del campo -->
+                        },{
+                            xtype: 'textfield',//<!--xtype puede ser textfield, datefield, timefield, numberfield, combo, textarea-->
+                            fieldLabel: 'Capital',
+                            name: 'apellido'
+                        },{
+                            xtype: 'datefield',
+                            fieldLabel: 'Fecha de fundaciÃ³n',
+                            name: 'fecha'
+                        }],
+                        //<!-- en es es un vector precedido de la palabra buttons: para especificar -->
+                        //<!-- que este vector son los botones del formulario en este caso el submit-->
+                buttons: [{
+                            text: 'Guardar',
+                            handler: function() {
+                                //<!-- estos son elementos basicos de los formularios -->
+                                //<!-- la accion -->
+                                 
+                                //<!-- procesar.jsp=para tomcat -->
+                                //<!-- procesar.php=para wamp, xamp, apache -->
+                                formulario.getForm().getEl().dom.action = 'procesar.jsp';
+                               // <!-- el metodo de envio de la informacion -->
+                                formulario.getForm().getEl().dom.method = 'POST';
+                                //<!-- para decir que este boton es el submit -->
+                                formulario.getForm().submit();
+                            }
+                        }]
+                });
+	   
+	    // <!------------------------------------------------------------------------------------------>
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   });
+	   </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="hellowordPanel1"></div>
+    </body>
+</html>
